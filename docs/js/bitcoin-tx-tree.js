@@ -42,7 +42,7 @@ $(document).ready(function() {
 
         vis = d3.select("#chart").append("svg:g").attr("transform", "translate(50, 0)");
 
-        d3.json('/tree/' + $(document.body).data('txindex') + '?format=json', function(json) {
+        d3.json('/btc-tx-tree/' + $(document.body).data('txindex') + '?format=json', function(json) {
             nodeCount = json.children.length;
 
             nodeMap[json.name] = json;
@@ -207,7 +207,7 @@ $(document).ready(function() {
 
         for (var ti = 0; ti < tmp.length; ++ti) {
 
-            d3.json('/tree/' + tmp[ti] + '?format=json', function(json) {
+            d3.json('/btc-tx-tree/' + tmp[ti] + '?format=json', function(json) {
 
                 if (node.rendered == null) {
                     node.relayed_by = json.relayed_by;
